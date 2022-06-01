@@ -1,6 +1,9 @@
 package savekoalas.gui;
 
-import savekoalas.engine.GameEngine;
+import javafx.scene.control.Cell;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
+//import savekoalas.engine.GameEngine;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +17,8 @@ import javafx.stage.Stage;
  */
 public class GameGUI extends Application {
     // TODO: move this to Controller class if you use FXML...
-    private GameEngine engine = new GameEngine(10);
+    //private GameEngine engine = new GameEngine(10);
+    //private Cell[][] CellMatrix =  new Cell[10][10];
 
 
     @Override
@@ -23,8 +27,23 @@ public class GameGUI extends Application {
         //Button root = new Button("Amazing Miner Game coming soon...");
         //root.setFont(new Font(24));
 
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.setTitle("Maze Runner Game");
+        //create map
+        GridPane map = new GridPane();
+        map.setPrefSize(100, 100);
+
+
+
+
+
+
+
+
+        FlowPane pane = new FlowPane();
+        pane.getChildren().addAll(map);
+
+        Scene scene = new Scene(pane, 900 , 600 );
+        primaryStage.setTitle( "Save Koalas" ); // Set the stage
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
